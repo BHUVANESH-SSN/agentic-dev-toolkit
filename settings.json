@@ -1,0 +1,44 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "type": "command",
+        "command": ".claude/hooks/block-dangerous.sh"
+      }
+    ],
+    "PostWrite": [
+      {
+        "matcher": ".*\\.(py|ts|tsx|js)$",
+        "type": "command",
+        "command": ".claude/hooks/lint-on-write.sh"
+      }
+    ],
+    "SessionComplete": [
+      {
+        "type": "command",
+        "command": ".claude/hooks/session-summary.sh"
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(python *)",
+      "Bash(pip *)",
+      "Bash(docker ps)",
+      "Bash(docker logs *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(grep *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)"
+    ]
+  }
+}

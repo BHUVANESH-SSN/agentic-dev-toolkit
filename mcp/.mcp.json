@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "postgres": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-postgres",
+        "${DATABASE_URL}"
+      ],
+      "comment": "Replace ${DATABASE_URL} with your connection string, or set the env var"
+    },
+    "github": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "comment": "Set GITHUB_TOKEN env var with a Personal Access Token (repo + PR scopes)"
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp"
+      ],
+      "comment": "Browser automation — used by frontend-engineer and test-engineer agents"
+    }
+  }
+}
