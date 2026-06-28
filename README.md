@@ -1,4 +1,4 @@
-# 🤖 claude-code-starter-kit
+#  claude-code-starter-kit
 
 > A production-ready Claude Code setup — CLAUDE.md, 8 skills, 7 agents, hooks, and MCP config.
 > Clone it, fill in your project details, and have a full agentic workflow running in minutes.
